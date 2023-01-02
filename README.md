@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="Logo" src="assets/readme-banner2.jpg" alt="Exemplo">
+  <img alt="Logo" src="assets/readme-banner.jpg" alt="Exemplo">
 </h1>
 
 <p align="center">
@@ -68,4 +68,4 @@ Distribuído sob a licença MIT. Veja [LICENSE](LICENSE) para mais informações
 
 ---
 
-Feito com ❤️ por Deigo Natalo.
+<p align="center">Feito com ❤️ por Deigo Natalo.</p>
