@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  // height: 3.375rem;
+
+  input[type='text'] {
+    width: 100%;
+    background: var(--gray-500);
+    border-radius: 8px;
+    border: 0;
+    padding: 1rem;
+    color: var(--gray-100);
+  }
+
+  button[type='submit'] {
+    display: flex;
+    align-items: center;
+    background: var(--blue-dark);
+    margin-left: 0.5rem;
+    border-radius: 8px;
+    border: 0;
+    padding: 1rem;
+    font-weight: bold;
+    font-size: 0.875rem;
+    color: var(--gray-100);
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background: var(--blue);
+    }
+
+    & svg {
+      margin-left: 0.25rem;
+    }
+  }
+}
