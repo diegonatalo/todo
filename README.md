@@ -39,7 +39,7 @@ Uma aplicação simples de lista de tarefas feita utilizando React e Typescript.
 
 ### 🚧 **Requisitos**
 
-> Será necessário instalar os items abaixo para clonar e executar o projeto corretamente!
+> Será necessário instalar os itens abaixo para clonar e executar o projeto corretamente!
 
 - [Git](https://git-scm.com/)
 - [Node](https://nodejs.org/)
