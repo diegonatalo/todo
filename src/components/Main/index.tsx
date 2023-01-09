@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Task } from '../../types/Task'
+import { Task } from '../../@types/Task'
 import { Empty } from '../Empty'
 import { NewTask } from '../NewTask'
 import { Summary } from '../Summary'

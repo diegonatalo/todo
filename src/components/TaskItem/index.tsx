@@ -1,5 +1,5 @@
 import { Check, Trash } from 'phosphor-react'
-import { Task } from '../../types/Task'
+import { Task } from '../../@types/Task'
 import styles from './styles.module.scss'
 
 interface TaskItemProps {
