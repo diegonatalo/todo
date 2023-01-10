@@ -32,6 +32,7 @@ Uma aplicação simples de lista de tarefas feita utilizando React e Typescript.
 - [Typescript](https://www.typescriptlang.org/)
 - [SASS](https://sass-lang.com/)
 - [Phosphor Icons](https://phosphoricons.com/)
+- [Vite](https://vitejs.dev/)
 
 ---
 
