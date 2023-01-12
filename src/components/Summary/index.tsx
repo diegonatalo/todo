@@ -1,21 +1,19 @@
+import { useTasks } from '@hooks/useTask'
 import styles from './styles.module.scss'
 
-interface SummaryProps {
-  totalCreatedTasks: number
-  totalDoneTasks: number
-}
+export function Summary() {
+  const { tasksQuantity, totalDoneTasks } = useTasks()
 
-export function Summary({ totalCreatedTasks, totalDoneTasks }: SummaryProps) {
   return (
     <div className={styles.container}>
       <div className={styles.created}>
         <span>Tarefas criadas</span>
-        <div className={styles.counter}>{totalCreatedTasks}</div>
+        <div className={styles.counter}>{tasksQuantity}</div>
       </div>
       <div className={styles.done}>
         <span>Concluídas</span>
         <div className={styles.counter}>
-          {totalDoneTasks} de {totalCreatedTasks}
+          {totalDoneTasks} de {tasksQuantity}
         </div>
       </div>
     </div>

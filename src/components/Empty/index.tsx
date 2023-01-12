@@ -1,4 +1,4 @@
-import clipboard from '../../assets/Clipboard.svg'
+import clipboard from '@assets/Clipboard.svg'
 import styles from './styles.module.scss'
 
 export function Empty() {

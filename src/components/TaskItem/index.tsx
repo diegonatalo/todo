@@ -1,20 +1,21 @@
+import { useTasks } from '@hooks/useTask'
 import { Check, Trash } from 'phosphor-react'
-import { Task } from '../../@types/Task'
+import { Task } from 'types/Task'
 import styles from './styles.module.scss'
 
 interface TaskItemProps {
   task: Task
-  onCheckTask: (id: number) => void
-  onDeleteTask: (id: number) => void
 }
 
-export function TaskItem({ task, onCheckTask, onDeleteTask }: TaskItemProps) {
-  function handleCheckTask() {
-    onCheckTask(task.id)
+export function TaskItem({ task }: TaskItemProps) {
+  const { deleteTask, markTaskAsDone } = useTasks()
+
+  function handleCheckTask(id: number) {
+    markTaskAsDone(id)
   }
 
-  function handleDeleteTask() {
-    onDeleteTask(task.id)
+  function handleDeleteTask(id: number) {
+    deleteTask(id)
   }
 
   return (
@@ -23,7 +24,7 @@ export function TaskItem({ task, onCheckTask, onDeleteTask }: TaskItemProps) {
         className={`${styles.checkButton} ${
           task.isDone && styles.checkDoneButton
         }`}
-        onClick={handleCheckTask}
+        onClick={() => handleCheckTask(task.id)}
       >
         {task.isDone && <Check size={10} weight="bold" />}
       </button>
@@ -34,7 +35,10 @@ export function TaskItem({ task, onCheckTask, onDeleteTask }: TaskItemProps) {
         {task.content.charAt(0).toUpperCase() + task.content.slice(1)}
       </span>
 
-      <button className={styles.trashButton} onClick={handleDeleteTask}>
+      <button
+        className={styles.trashButton}
+        onClick={() => handleDeleteTask(task.id)}
+      >
         <Trash size={16} />
       </button>
     </div>
