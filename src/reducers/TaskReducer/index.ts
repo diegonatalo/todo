@@ -16,7 +16,7 @@ export function TaskReducer(tasks: Task[], action: any) {
           (task) => task.id === action.payload.taskId
         )
 
-        Array.from(draft).splice(taskToDelete, 1)
+        draft.splice(taskToDelete, 1)
       })
     }
 
@@ -26,7 +26,7 @@ export function TaskReducer(tasks: Task[], action: any) {
           (task) => task.id === action.payload.taskId
         )
 
-        Array.from(draft)[taskToMark].isDone = !draft[taskToMark].isDone
+        draft[taskToMark].isDone = !draft[taskToMark].isDone
       })
     }
 
