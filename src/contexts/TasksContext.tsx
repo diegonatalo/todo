@@ -25,7 +25,7 @@ interface TasksProviderProps {
 const TASKS_STORAGE_KEY = 'toDo:tasks'
 
 export function TasksProvider({ children }: TasksProviderProps) {
-  const [tasksState, dispatch] = useReducer(TaskReducer, { tasks: [] }, () => {
+  const [tasksState, dispatch] = useReducer(TaskReducer, [], () => {
     const storedTasks = localStorage.getItem(TASKS_STORAGE_KEY)
 
     if (storedTasks) {
