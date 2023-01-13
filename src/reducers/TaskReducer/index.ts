@@ -1,5 +1,5 @@
 import { produce } from 'immer'
-import { Task } from 'types/Task'
+import { Task } from '../../@types/Task'
 import { ActionTypes } from './actions'
 
 export function TaskReducer(tasks: Task[], action: any) {

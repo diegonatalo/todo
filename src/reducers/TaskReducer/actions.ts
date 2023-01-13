@@ -1,4 +1,4 @@
-import { Task } from 'types/Task'
+import { Task } from '../../@types/Task'
 
 export enum ActionTypes {
   CREATE_TASK = 'CREATE_TASK',
