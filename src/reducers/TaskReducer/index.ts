@@ -6,7 +6,7 @@ export function TaskReducer(tasks: Task[], action: any) {
   switch (action.type) {
     case ActionTypes.CREATE_TASK: {
       return produce(tasks, (draft) => {
-        draft.push(action.payload.task)
+        Array.from(draft).push(action.payload.task)
       })
     }
 
@@ -16,7 +16,7 @@ export function TaskReducer(tasks: Task[], action: any) {
           (task) => task.id === action.payload.taskId
         )
 
-        draft.splice(taskToDelete, 1)
+        Array.from(draft).splice(taskToDelete, 1)
       })
     }
 
@@ -26,7 +26,7 @@ export function TaskReducer(tasks: Task[], action: any) {
           (task) => task.id === action.payload.taskId
         )
 
-        draft[taskToMark].isDone = !draft[taskToMark].isDone
+        Array.from(draft)[taskToMark].isDone = !draft[taskToMark].isDone
       })
     }
 
