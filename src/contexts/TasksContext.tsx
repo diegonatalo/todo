@@ -39,7 +39,7 @@ export function TasksProvider({ children }: TasksProviderProps) {
     localStorage.setItem(TASKS_STORAGE_KEY, JSON.stringify(tasksState))
   }, [tasksState])
 
-  const tasksQuantity = tasksState.length
+  const tasksQuantity = Array.from(tasksState).length
   const totalDoneTasks = Array.from(tasksState).reduce(
     (total, task) => (total += task.isDone ? 1 : 0),
     0
