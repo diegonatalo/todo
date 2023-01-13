@@ -6,7 +6,7 @@ import { TaskItem } from '../TaskItem'
 import styles from './styles.module.scss'
 
 export function Main() {
-  const { tasks, tasksQuantity } = useTasks()
+  const { tasksState, tasksQuantity } = useTasks()
 
   return (
     <main className={styles.container}>
@@ -16,7 +16,7 @@ export function Main() {
 
       {tasksQuantity > 0 ? (
         <div className={styles.taskList}>
-          {tasks.map((task) => (
+          {tasksState.map((task) => (
             <TaskItem key={task.id} task={task} />
           ))}
         </div>

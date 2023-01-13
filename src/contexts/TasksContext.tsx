@@ -8,7 +8,7 @@ import {
 } from '../reducers/TaskReducer/actions'
 
 interface TasksContextData {
-  tasks: Task[]
+  tasksState: Task[]
   tasksQuantity: number
   totalDoneTasks: number
   createTask: (task: Task) => void
@@ -25,7 +25,7 @@ interface TasksProviderProps {
 const TASKS_STORAGE_KEY = 'toDo:tasks'
 
 export function TasksProvider({ children }: TasksProviderProps) {
-  const [tasks, dispatch] = useReducer(TaskReducer, { tasks: [] }, () => {
+  const [tasksState, dispatch] = useReducer(TaskReducer, { tasks: [] }, () => {
     const storedTasks = localStorage.getItem(TASKS_STORAGE_KEY)
 
     if (storedTasks) {
@@ -36,11 +36,11 @@ export function TasksProvider({ children }: TasksProviderProps) {
   })
 
   useEffect(() => {
-    localStorage.setItem(TASKS_STORAGE_KEY, JSON.stringify(tasks))
-  }, [tasks])
+    localStorage.setItem(TASKS_STORAGE_KEY, JSON.stringify(tasksState))
+  }, [tasksState])
 
-  const tasksQuantity = tasks.length
-  const totalDoneTasks = Array.from(tasks).reduce(
+  const tasksQuantity = tasksState.length
+  const totalDoneTasks = tasksState.reduce(
     (total, task) => (total += task.isDone ? 1 : 0),
     0
   )
@@ -60,7 +60,7 @@ export function TasksProvider({ children }: TasksProviderProps) {
   return (
     <TasksContext.Provider
       value={{
-        tasks,
+        tasksState,
         createTask,
         markTaskAsDone,
         deleteTask,
