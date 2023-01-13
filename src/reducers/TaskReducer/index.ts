@@ -5,13 +5,13 @@ import { ActionTypes } from './actions'
 export function TaskReducer(tasks: Task[], action: any) {
   switch (action.type) {
     case ActionTypes.CREATE_TASK: {
-      return produce(Array.from(tasks), (draft) => {
+      return produce(tasks, (draft) => {
         draft.push(action.payload.task)
       })
     }
 
     case ActionTypes.DELETE_TASK: {
-      return produce(Array.from(tasks), (draft) => {
+      return produce(tasks, (draft) => {
         const taskToDelete = tasks.findIndex(
           (task) => task.id === action.payload.taskId
         )
@@ -31,7 +31,6 @@ export function TaskReducer(tasks: Task[], action: any) {
     }
 
     default:
-      console.log('cheguei no default')
       return tasks
   }
 }
