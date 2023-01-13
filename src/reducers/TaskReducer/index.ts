@@ -5,13 +5,13 @@ import { ActionTypes } from './actions'
 export function TaskReducer(tasks: Task[], action: any) {
   switch (action.type) {
     case ActionTypes.CREATE_TASK: {
-      return produce(tasks, (draft) => {
-        Array.from(draft).push(action.payload.task)
+      return produce(Array.from(tasks), (draft) => {
+        draft.push(action.payload.task)
       })
     }
 
     case ActionTypes.DELETE_TASK: {
-      return produce(tasks, (draft) => {
+      return produce(Array.from(tasks), (draft) => {
         const taskToDelete = tasks.findIndex(
           (task) => task.id === action.payload.taskId
         )
