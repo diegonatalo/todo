@@ -25,7 +25,7 @@ interface TasksProviderProps {
 const TASKS_STORAGE_KEY = 'toDo:tasks'
 
 export function TasksProvider({ children }: TasksProviderProps) {
-  const [tasksState, dispatch] = useReducer(TaskReducer, [], () => {
+  const [tasksState, dispatch] = useReducer(TaskReducer, { tasks: [] }, () => {
     const storedTasks = localStorage.getItem(TASKS_STORAGE_KEY)
 
     if (storedTasks) {
@@ -39,7 +39,7 @@ export function TasksProvider({ children }: TasksProviderProps) {
     localStorage.setItem(TASKS_STORAGE_KEY, JSON.stringify(tasksState))
   }, [tasksState])
 
-  const tasksQuantity = Array.from(tasksState).length
+  const tasksQuantity = tasksState.length
   const totalDoneTasks = Array.from(tasksState).reduce(
     (total, task) => (total += task.isDone ? 1 : 0),
     0
