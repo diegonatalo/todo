@@ -10,11 +10,11 @@ interface TaskItemProps {
 export function TaskItem({ task }: TaskItemProps) {
   const { deleteTask, markTaskAsDone } = useTasks()
 
-  function handleCheckTask(id: number) {
+  function handleCheckTask(id: string) {
     markTaskAsDone(id)
   }
 
-  function handleDeleteTask(id: number) {
+  function handleDeleteTask(id: string) {
     deleteTask(id)
   }
 
