@@ -15,7 +15,7 @@ export function createTaskAction(task: Task) {
   }
 }
 
-export function deleteTaskAction(taskId: number) {
+export function deleteTaskAction(taskId: string) {
   return {
     type: ActionTypes.DELETE_TASK,
     payload: {
@@ -24,7 +24,7 @@ export function deleteTaskAction(taskId: number) {
   }
 }
 
-export function markTaskAsDoneAction(taskId: number) {
+export function markTaskAsDoneAction(taskId: string) {
   return {
     type: ActionTypes.MARK_TASK_AS_DONE,
     payload: {

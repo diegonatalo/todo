@@ -1,6 +1,7 @@
 import { useTasks } from '@hooks/useTask'
 import { PlusCircle } from 'phosphor-react'
 import { ChangeEvent, useState } from 'react'
+import { v4 as uuidv4 } from 'uuid'
 import styles from './styles.module.scss'
 
 export function NewTask() {
@@ -15,7 +16,7 @@ export function NewTask() {
     event?.preventDefault()
 
     createTask({
-      id: Math.floor(Math.random() * (1000 - 1 + 1) + 1),
+      id: uuidv4(),
       content: content,
       isDone: false
     })

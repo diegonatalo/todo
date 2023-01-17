@@ -11,22 +11,23 @@
 <h1 align="center">
     ToDo
 </h1>
-<p align="center">Uma aplicação de lista de tarefas</p>
+<p align="center">Aplicação simples para gerenciar tarefas de uma lista</p>
 
 <p align="center">
  <a href="#-sobre-o-projeto">Sobre o Projeto</a> •
  <a href="#-tecnologias">Tecnologias</a> •
  <a href="#-configurando-o-ambiente">Configurando o Ambiente</a> •
+ <a href="#-trabalhos-futuros">Trabalhos Futuros</a> •
  <a href="#-licença">Licença</a>
 </p>
 
 ## 📌 Sobre o projeto
 
-Uma aplicação simples de lista de tarefas feita utilizando React e Typescript.
+Esta aplicação foi desenvolvida para auxiliar o usuário a gerenciar suas tarefas diárias. Ao acessar a aplicação o usuário poderá cadastrar uma nova tarefa e também poderá visualizar tarefas que ele criou anteriormente (caso existam), as tarefas exibidas na lista podem ser marcadas ou desmarcadas como concluídas e também excluídas. Ligeiramente abaixo do campo de inserção de uma nova tarefa é possível visualizar um sumário que informa a quantidade total de tarefas existentes e quantas das mesmas foram feitas.
 
 ---
 
-## 💻 Tecnologias
+## 🧩 Tecnologias
 
 - [React](https://reactjs.org/)
 - [Typescript](https://www.typescriptlang.org/)
@@ -60,6 +61,13 @@ $ npm i
 # Por fim, inicie a aplicação:
 $ npm run dev
 ```
+
+---
+
+## 💭 Trabalhos futuros
+
+- Adicionar uma opção para que o usuário possa editar uma tarefa criada
+- Desenvolver uma modal onde o usuário fará a edição da tarefa
 
 ---
 

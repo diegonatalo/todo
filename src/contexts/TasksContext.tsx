@@ -12,8 +12,8 @@ interface TasksContextData {
   tasksQuantity: number
   totalDoneTasks: number
   createTask: (task: Task) => void
-  markTaskAsDone: (taskId: number) => void
-  deleteTask: (taskId: number) => void
+  markTaskAsDone: (taskId: string) => void
+  deleteTask: (taskId: string) => void
 }
 
 export const TasksContext = createContext({} as TasksContextData)
@@ -49,11 +49,11 @@ export function TasksProvider({ children }: TasksProviderProps) {
     dispatch(createTaskAction(task))
   }
 
-  function markTaskAsDone(taskId: number) {
+  function markTaskAsDone(taskId: string) {
     dispatch(markTaskAsDoneAction(taskId))
   }
 
-  function deleteTask(taskId: number) {
+  function deleteTask(taskId: string) {
     dispatch(deleteTaskAction(taskId))
   }
 
