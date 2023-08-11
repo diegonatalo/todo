@@ -49,7 +49,7 @@ O tema se adapta entre claro ou escuro dependendo das preferências do sistema o
 - [Clerk](https://clerk.com/)
 - [Axios](https://axios-http.com/docs/intro)
 - [Prisma ORM](https://www.prisma.io/)
-- [SQLite](https://www.sqlite.org/index.html)
+- [Postgres](https://vercel.com/storage/postgres)
 </td>
 </tr>
 </table>
